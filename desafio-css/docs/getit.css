@@ -26,7 +26,6 @@ body {
   color: #2c2c2c;
   font-weight: 500;
   margin-left: -13px; /* valor negativo puxa para a esquerda */
-
 }
 
 /* Container principal */
@@ -127,20 +126,30 @@ body {
   box-sizing: border-box;
   overflow: hidden;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
+  transition: transform 120ms ease, background-color 120ms ease; /* transição suave */
 }
 
-/* Cores e rotações dos cards */
-.card:nth-child(1) { background-color: #fae890; transform: rotate(2deg); }
-.card:nth-child(2) { background-color: #ef89ba; transform: rotate(-3deg); }
-.card:nth-child(3) { background-color: #9de0f5; transform: rotate(2.5deg); }
-.card:nth-child(4) { background-color: #fae890; transform: rotate(-2deg); }
-.card:nth-child(5) { background-color: #abe9c1; transform: rotate(1.5deg); }
-.card:nth-child(6) { background-color: #ead3a7; transform: rotate(-2.5deg); }
-.card:nth-child(7) { background-color: #ef89ba; transform: rotate(3deg); }
-.card:nth-child(8) { background-color: #abe9c1; transform: rotate(-1.5deg); }
-.card:nth-child(9) { background-color: #fae890; transform: rotate(2deg); }
-.card:nth-child(10) { background-color: #ef89ba; transform: rotate(-2deg); }
+/* === Cores e rotações CONTROLADAS POR CLASSES (JS) === */
+/* Cores sorteadas */
+.card.card-color-1 { background-color: #fae890; } /* amarelo claro */
+.card.card-color-2 { background-color: #ef89ba; } /* rosa */
+.card.card-color-3 { background-color: #9de0f5; } /* azul claro */
+.card.card-color-4 { background-color: #abe9c1; } /* verde menta */
+.card.card-color-5 { background-color: #ead3a7; } /* bege */
+
+/* Rotações sorteadas (−5° a +5°) */
+.card.card-rotation-1  { transform: rotate(-5deg); }
+.card.card-rotation-2  { transform: rotate(-4deg); }
+.card.card-rotation-3  { transform: rotate(-3deg); }
+.card.card-rotation-4  { transform: rotate(-2deg); }
+.card.card-rotation-5  { transform: rotate(-1deg); }
+.card.card-rotation-6  { transform: rotate(0deg);  }
+.card.card-rotation-7  { transform: rotate(1deg);  }
+.card.card-rotation-8  { transform: rotate(2deg);  }
+.card.card-rotation-9  { transform: rotate(3deg);  }
+.card.card-rotation-10 { transform: rotate(4deg);  }
+.card.card-rotation-11 { transform: rotate(5deg);  }
 
 /* Títulos dos cards */
 .card-title {
@@ -176,12 +185,12 @@ body {
     gap: 12px;
     max-width: 800px;
   }
-  
+
   .card:nth-child(-n+6) {
     width: 130px;
     height: 95px;
   }
-  
+
   .card:nth-child(n+7) {
     width: 120px;
     height: 80px;
@@ -192,20 +201,20 @@ body {
   .container {
     padding: 20px 15px;
   }
-  
+
   .appbar {
     padding: 12px 25px;
   }
-  
+
   .logo {
     width: 100px;
     margin-right: 20px;
   }
-  
+
   .subtitle {
     font-size: 16px;
   }
-  
+
   .form-card {
     max-width: 90%;
     height: 120px;
@@ -217,16 +226,16 @@ body {
     width: 110px;
     height: 80px;
   }
-  
+
   .card:nth-child(n+7) {
     width: 100px;
     height: 70px;
   }
-  
+
   .card-title {
     font-size: 13px;
   }
-  
+
   .card-content {
     font-size: 10px;
   }
